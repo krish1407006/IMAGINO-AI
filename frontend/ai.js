@@ -9,9 +9,6 @@ const downloadBtn = document.getElementById('download-btn');
 const downloadContainer = document.getElementById('download-container');
 const resetBtn = document.getElementById('reset-btn');
 
-console.log('Download Button:', downloadBtn);
-console.log('Download Container:', downloadContainer);
-
 generateBtn.addEventListener('click', async () => {
     const prompt = promptInput.value.trim();
     if (!prompt) {
