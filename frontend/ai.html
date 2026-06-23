@@ -10,10 +10,6 @@
 <body>
     <canvas id="particle-canvas"></canvas>
 
-    <div class="orb o1"></div>
-    <div class="orb o2"></div>
-    <div class="orb o3"></div>
-
     <div id="page-loader">
         <div class="loader-inner"></div>
     </div>
@@ -166,7 +162,7 @@
     <script>
         const canvas = document.getElementById('particle-canvas');
         const ctx = canvas.getContext('2d');
-        let w, h, particles = [];
+        let w, h, diagonals = [];
 
         function resize() {
             w = canvas.width = window.innerWidth;
@@ -175,49 +171,39 @@
         resize();
         window.addEventListener('resize', resize);
 
-        class Particle {
+        class Diagonal {
             constructor() { this.reset(); }
             reset() {
-                this.x = Math.random() * w;
-                this.y = Math.random() * h;
-                this.size = Math.random() * 2 + 0.5;
-                this.speedX = (Math.random() - 0.5) * 0.4;
-                this.speedY = (Math.random() - 0.5) * 0.4;
-                this.opacity = Math.random() * 0.4 + 0.05;
+                this.x = Math.random() * w * 1.5 - w * 0.25;
+                this.y = Math.random() * h * 1.5 - h * 0.25;
+                this.len = Math.random() * 60 + 20;
+                this.speed = Math.random() * 0.6 + 0.2;
+                this.angle = Math.random() * 0.6 + 0.4;
+                this.opacity = Math.random() * 0.08 + 0.02;
+                this.width = Math.random() * 1.5 + 0.5;
             }
             update() {
-                this.x += this.speedX;
-                this.y += this.speedY;
-                if (this.x < 0 || this.x > w || this.y < 0 || this.y > h) this.reset();
+                this.x += this.speed * Math.cos(this.angle);
+                this.y += this.speed * Math.sin(this.angle);
+                if (this.x > w * 1.3 || this.x < -w * 0.3 || this.y > h * 1.3 || this.y < -h * 0.3) this.reset();
             }
             draw() {
+                const ex = this.x + this.len * Math.cos(this.angle);
+                const ey = this.y + this.len * Math.sin(this.angle);
                 ctx.beginPath();
-                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                ctx.fillStyle = `rgba(255, 255, 255, ${this.opacity})`;
-                ctx.fill();
+                ctx.moveTo(this.x, this.y);
+                ctx.lineTo(ex, ey);
+                ctx.strokeStyle = `rgba(0, 0, 0, ${this.opacity})`;
+                ctx.lineWidth = this.width;
+                ctx.stroke();
             }
         }
 
-        for (let i = 0; i < 100; i++) particles.push(new Particle());
+        for (let i = 0; i < 50; i++) diagonals.push(new Diagonal());
 
         function animate() {
             ctx.clearRect(0, 0, w, h);
-            particles.forEach(p => { p.update(); p.draw(); });
-            for (let i = 0; i < particles.length; i++) {
-                for (let j = i + 1; j < particles.length; j++) {
-                    const dx = particles[i].x - particles[j].x;
-                    const dy = particles[i].y - particles[j].y;
-                    const dist = Math.sqrt(dx * dx + dy * dy);
-                    if (dist < 180) {
-                        ctx.beginPath();
-                        ctx.moveTo(particles[i].x, particles[i].y);
-                        ctx.lineTo(particles[j].x, particles[j].y);
-                        ctx.strokeStyle = `rgba(255, 255, 255, ${0.04 * (1 - dist / 180)})`;
-                        ctx.lineWidth = 0.5;
-                        ctx.stroke();
-                    }
-                }
-            }
+            diagonals.forEach(d => { d.update(); d.draw(); });
             requestAnimationFrame(animate);
         }
         animate();
