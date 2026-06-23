@@ -9,6 +9,10 @@ const downloadBtn = document.getElementById('download-btn');
 const downloadContainer = document.getElementById('download-container');
 const resetBtn = document.getElementById('reset-btn');
 
+const API_URL = location.hostname === 'localhost' || location.hostname === '127.0.0.1'
+    ? 'http://localhost:8080/api/v1/generate'
+    : 'https://imagino-ai-1.onrender.com/api/v1/generate';
+
 generateBtn.addEventListener('click', async () => {
     const prompt = promptInput.value.trim();
     if (!prompt) {
@@ -21,7 +25,7 @@ generateBtn.addEventListener('click', async () => {
     generatedImage.classList.add('hidden');
     downloadContainer.classList.add('hidden');
     try {
-        const response = await fetch('https://imagino-ai-2.onrender.com/api/v1/generate', {
+        const response = await fetch(API_URL, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ prompt })

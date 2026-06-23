@@ -1,6 +1,9 @@
 import fetch from 'node-fetch';
 import dotenv from 'dotenv';
-dotenv.config();
+import { fileURLToPath } from 'url';
+import { dirname, resolve } from 'path';
+const __dirname = dirname(fileURLToPath(import.meta.url));
+dotenv.config({ path: resolve(__dirname, '../.env') });
 
 const image = async (req, res) => {
     console.log('Received request to generate image via Pollinations');
