@@ -221,6 +221,48 @@
             requestAnimationFrame(animate);
         }
         animate();
+
+        // Overlay logic
+        const featuresOverlay = document.getElementById('features-overlay');
+        const galleryOverlay = document.getElementById('gallery-overlay');
+        const featuresClose = document.getElementById('features-close');
+        const galleryClose = document.getElementById('gallery-close');
+
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const text = link.textContent.trim().toLowerCase();
+                if (text === 'features') {
+                    featuresOverlay.classList.remove('hidden');
+                    featuresOverlay.classList.add('visible');
+                } else if (text === 'gallery') {
+                    galleryOverlay.classList.remove('hidden');
+                    galleryOverlay.classList.add('visible');
+                }
+            });
+        });
+
+        function closeOverlay(overlay) {
+            overlay.classList.remove('visible');
+            setTimeout(() => overlay.classList.add('hidden'), 400);
+        }
+
+        featuresClose.addEventListener('click', () => closeOverlay(featuresOverlay));
+        galleryClose.addEventListener('click', () => closeOverlay(galleryOverlay));
+
+        featuresOverlay.addEventListener('click', (e) => {
+            if (e.target === featuresOverlay) closeOverlay(featuresOverlay);
+        });
+        galleryOverlay.addEventListener('click', (e) => {
+            if (e.target === galleryOverlay) closeOverlay(galleryOverlay);
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                if (featuresOverlay.classList.contains('visible')) closeOverlay(featuresOverlay);
+                if (galleryOverlay.classList.contains('visible')) closeOverlay(galleryOverlay);
+            }
+        });
     </script>
 </body>
 </html>
