@@ -221,10 +221,8 @@
                 e.preventDefault();
                 const text = link.textContent.trim().toLowerCase();
                 if (text === 'features') {
-                    featuresOverlay.classList.remove('hidden');
                     featuresOverlay.classList.add('visible');
                 } else if (text === 'gallery') {
-                    galleryOverlay.classList.remove('hidden');
                     galleryOverlay.classList.add('visible');
                 }
             });
@@ -232,7 +230,6 @@
 
         function closeOverlay(overlay) {
             overlay.classList.remove('visible');
-            setTimeout(() => overlay.classList.add('hidden'), 400);
         }
 
         featuresClose.addEventListener('click', () => closeOverlay(featuresOverlay));
