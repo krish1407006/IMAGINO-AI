@@ -205,10 +205,10 @@ body {
 #prompt-input {
     flex: 1;
     padding: 0.9rem 1.2rem;
-    background: rgba(255,255,255,0.02);
-    border: 1px solid rgba(255,255,255,0.06);
+    background: rgba(0,0,0,0.02);
+    border: 1px solid rgba(0,0,0,0.06);
     border-radius: 12px;
-    color: #fff;
+    color: #111;
     font-family: 'Inter', sans-serif;
     font-size: 0.85rem;
     outline: none;
@@ -216,13 +216,13 @@ body {
 }
 
 #prompt-input::placeholder {
-    color: rgba(255,255,255,0.1);
+    color: rgba(0,0,0,0.15);
 }
 
 #prompt-input:focus {
-    border-color: rgba(255,255,255,0.15);
-    background: rgba(255,255,255,0.03);
-    box-shadow: 0 0 30px rgba(255,255,255,0.02);
+    border-color: rgba(0,0,0,0.15);
+    background: rgba(0,0,0,0.03);
+    box-shadow: 0 0 30px rgba(0,0,0,0.02);
 }
 
 #generate-btn {
