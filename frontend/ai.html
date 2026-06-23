@@ -87,7 +87,7 @@
     </div>
 
     <!-- Features Overlay -->
-    <div id="features-overlay" class="overlay hidden">
+    <div id="features-overlay" class="overlay">
         <div class="overlay-backdrop"></div>
         <div class="overlay-content">
             <button class="overlay-close" id="features-close">
@@ -143,7 +143,7 @@
     </div>
 
     <!-- Gallery Overlay -->
-    <div id="gallery-overlay" class="overlay hidden">
+    <div id="gallery-overlay" class="overlay">
         <div class="overlay-backdrop"></div>
         <div class="overlay-content">
             <button class="overlay-close" id="gallery-close">
@@ -233,10 +233,8 @@
                 e.preventDefault();
                 const text = link.textContent.trim().toLowerCase();
                 if (text === 'features') {
-                    featuresOverlay.classList.remove('hidden');
                     featuresOverlay.classList.add('visible');
                 } else if (text === 'gallery') {
-                    galleryOverlay.classList.remove('hidden');
                     galleryOverlay.classList.add('visible');
                 }
             });
@@ -244,7 +242,6 @@
 
         function closeOverlay(overlay) {
             overlay.classList.remove('visible');
-            setTimeout(() => overlay.classList.add('hidden'), 400);
         }
 
         featuresClose.addEventListener('click', () => closeOverlay(featuresOverlay));
