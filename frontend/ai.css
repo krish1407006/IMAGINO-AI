@@ -60,7 +60,7 @@ body {
 #page-loader {
     position: fixed;
     inset: 0;
-    background: #09090b;
+    background: #fafafa;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -70,9 +70,9 @@ body {
 .loader-inner {
     width: 46px;
     height: 46px;
-    border: 2px solid rgba(255,255,255,0.03);
-    border-top-color: #fff;
-    border-right-color: rgba(255,255,255,0.3);
+    border: 2px solid rgba(0,0,0,0.04);
+    border-top-color: #111;
+    border-right-color: rgba(0,0,0,0.2);
     border-radius: 50%;
     animation: spin 0.7s linear infinite;
 }
@@ -99,7 +99,7 @@ body {
     align-items: center;
     justify-content: space-between;
     padding: 1.25rem 0;
-    border-bottom: 1px solid rgba(255,255,255,0.04);
+    border-bottom: 1px solid rgba(0,0,0,0.04);
     animation: rise 0.8s ease-out forwards;
 }
 
@@ -111,33 +111,34 @@ body {
 
 .logo-diamond {
     font-size: 1.3rem;
-    color: #fff;
-    opacity: 0.4;
+    color: #111;
+    opacity: 0.25;
 }
 
 .logo-text {
     font-size: 1.2rem;
     font-weight: 700;
     letter-spacing: -0.02em;
+    color: #111;
 }
 
 .highlight {
-    color: #fff;
-    opacity: 0.6;
+    color: #111;
+    opacity: 0.5;
 }
 
 .back-link {
     display: inline-flex;
     align-items: center;
     gap: 0.35rem;
-    color: rgba(255,255,255,0.2);
+    color: rgba(0,0,0,0.2);
     text-decoration: none;
     font-size: 0.8rem;
     font-weight: 500;
     transition: color 0.3s;
 }
 
-.back-link:hover { color: #fff; }
+.back-link:hover { color: #111; }
 
 .main {
     flex: 1;
