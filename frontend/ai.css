@@ -263,8 +263,8 @@ body {
     max-width: 600px;
     aspect-ratio: 3 / 2;
     margin: 0 auto;
-    background: rgba(255,255,255,0.015);
-    border: 1px solid rgba(255,255,255,0.04);
+    background: rgba(0,0,0,0.01);
+    border: 1px solid rgba(0,0,0,0.04);
     border-radius: 16px;
     display: flex;
     align-items: center;
@@ -277,8 +277,8 @@ body {
 }
 
 #image-container:has(#generated-image:not(.hidden)) {
-    border-color: rgba(255,255,255,0.08);
-    box-shadow: 0 0 50px rgba(255,255,255,0.02);
+    border-color: rgba(0,0,0,0.08);
+    box-shadow: 0 0 50px rgba(0,0,0,0.02);
 }
 
 #placeholder {
