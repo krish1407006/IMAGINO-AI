@@ -66,6 +66,17 @@ if (downloadBtn) {
     console.error('Download button element not found!');
 }
 
+if (resetBtn) {
+    resetBtn.addEventListener('click', () => {
+        promptInput.value = '';
+        generatedImage.src = '';
+        generatedImage.classList.add('hidden');
+        placeholder.classList.remove('hidden');
+        downloadContainer.classList.add('hidden');
+        hideError();
+    });
+}
+
 function downloadImage(imageUrl) {
     // Try fetch-based download first (handles CORS better)
     fetch(imageUrl)
