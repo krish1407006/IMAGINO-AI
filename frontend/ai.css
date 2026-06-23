@@ -261,7 +261,7 @@ body {
 #image-container {
     width: 100%;
     max-width: 600px;
-    aspect-ratio: 3 / 2;
+    min-height: 350px;
     margin: 0 auto;
     background: rgba(255,255,255,0.02);
     border: 1px solid rgba(255,255,255,0.04);
@@ -272,13 +272,14 @@ body {
     position: relative;
     overflow: hidden;
     backdrop-filter: blur(4px);
-    transition: border-color 0.4s, box-shadow 0.4s;
+    transition: border-color 0.4s, box-shadow 0.4s, min-height 0.4s;
     animation: rise 0.8s ease-out 0.7s both;
 }
 
 #image-container:has(#generated-image:not(.hidden)) {
     border-color: rgba(255,255,255,0.08);
     box-shadow: 0 0 50px rgba(255,255,255,0.02);
+    min-height: auto;
 }
 
 #placeholder {
@@ -309,8 +310,8 @@ body {
 
 #generated-image {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;
+    display: block;
     border-radius: 16px;
     opacity: 0;
     animation: reveal 0.5s ease-out forwards;
