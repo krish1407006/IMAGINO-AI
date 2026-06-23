@@ -86,6 +86,82 @@
         </footer>
     </div>
 
+    <!-- Features Overlay -->
+    <div id="features-overlay" class="overlay hidden">
+        <div class="overlay-backdrop"></div>
+        <div class="overlay-content">
+            <button class="overlay-close" id="features-close">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </button>
+            <h2 class="overlay-title">Everything You Need</h2>
+            <p class="overlay-sub">Imagino AI packs a complete creative toolbox — no compromises.</p>
+            <div class="features-grid">
+                <div class="feature-detailed">
+                    <div class="fd-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+                    </div>
+                    <h4>Text-to-Image</h4>
+                    <p>Describe any scene, style, or concept and watch AI bring it to life in seconds. From photorealism to abstract art.</p>
+                </div>
+                <div class="feature-detailed">
+                    <div class="fd-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    </div>
+                    <h4>Stunning Quality</h4>
+                    <p>State-of-the-art models deliver crisp, detailed, and visually striking results every time with rich color and lighting.</p>
+                </div>
+                <div class="feature-detailed">
+                    <div class="fd-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    </div>
+                    <h4>Lightning Fast</h4>
+                    <p>No queues, no waiting. Your creations are ready in the blink of an eye thanks to optimized inference pipelines.</p>
+                </div>
+                <div class="feature-detailed">
+                    <div class="fd-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                    </div>
+                    <h4>Multiple Styles</h4>
+                    <p>Choose from cinematic, anime, oil painting, 3D render, pixel art, and dozens more creative styles.</p>
+                </div>
+                <div class="feature-detailed">
+                    <div class="fd-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                    </div>
+                    <h4>HD Upscaling</h4>
+                    <p>Upscale your generations to 4K resolution with built-in super-resolution that preserves every detail.</p>
+                </div>
+                <div class="feature-detailed">
+                    <div class="fd-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+                    </div>
+                    <h4>Community Love</h4>
+                    <p>Join thousands of creators already using Imagino AI to bring their wildest ideas to life every day.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Gallery Overlay -->
+    <div id="gallery-overlay" class="overlay hidden">
+        <div class="overlay-backdrop"></div>
+        <div class="overlay-content">
+            <button class="overlay-close" id="gallery-close">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </button>
+            <h2 class="overlay-title">Incredible Creations</h2>
+            <p class="overlay-sub">See what the Imagino AI community has generated. Every image started as a simple prompt.</p>
+            <div class="gallery-grid">
+                <div class="gallery-item"><img src="https://picsum.photos/seed/imagino1/400/400" alt="AI generated landscape" loading="lazy"></div>
+                <div class="gallery-item"><img src="https://picsum.photos/seed/imagino2/400/400" alt="AI generated portrait" loading="lazy"></div>
+                <div class="gallery-item"><img src="https://picsum.photos/seed/imagino3/400/400" alt="AI generated city" loading="lazy"></div>
+                <div class="gallery-item"><img src="https://picsum.photos/seed/imagino4/400/400" alt="AI generated fantasy" loading="lazy"></div>
+                <div class="gallery-item"><img src="https://picsum.photos/seed/imagino5/400/400" alt="AI generated nature" loading="lazy"></div>
+                <div class="gallery-item"><img src="https://picsum.photos/seed/imagino6/400/400" alt="AI generated abstract" loading="lazy"></div>
+            </div>
+        </div>
+    </div>
+
     <script src="ai.js"></script>
     <script>
         const canvas = document.getElementById('particle-canvas');
