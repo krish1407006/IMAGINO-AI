@@ -248,10 +248,10 @@
         galleryClose.addEventListener('click', () => closeOverlay(galleryOverlay));
 
         featuresOverlay.addEventListener('click', (e) => {
-            if (e.target === featuresOverlay) closeOverlay(featuresOverlay);
+            if (e.target === featuresOverlay || e.target.classList.contains('overlay-backdrop')) closeOverlay(featuresOverlay);
         });
         galleryOverlay.addEventListener('click', (e) => {
-            if (e.target === galleryOverlay) closeOverlay(galleryOverlay);
+            if (e.target === galleryOverlay || e.target.classList.contains('overlay-backdrop')) closeOverlay(galleryOverlay);
         });
 
         document.addEventListener('keydown', (e) => {
