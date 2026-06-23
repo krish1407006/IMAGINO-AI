@@ -6,8 +6,8 @@
 
 body {
     font-family: 'Inter', sans-serif;
-    background: #09090b;
-    color: #fff;
+    background: #fafafa;
+    color: #111;
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -32,21 +32,21 @@ body {
 
 .o1 {
     width: 500px; height: 500px;
-    background: radial-gradient(circle, rgba(255,255,255,0.06), transparent);
+    background: radial-gradient(circle, rgba(0,0,0,0.04), transparent);
     top: -15%; left: -8%;
     animation: drifta 14s ease-in-out infinite alternate;
 }
 
 .o2 {
     width: 400px; height: 400px;
-    background: radial-gradient(circle, rgba(255,255,255,0.04), transparent);
+    background: radial-gradient(circle, rgba(0,0,0,0.03), transparent);
     bottom: -10%; right: -5%;
     animation: drifta 18s ease-in-out infinite alternate-reverse;
 }
 
 .o3 {
     width: 300px; height: 300px;
-    background: radial-gradient(circle, rgba(255,255,255,0.03), transparent);
+    background: radial-gradient(circle, rgba(0,0,0,0.02), transparent);
     top: 50%; left: 50%;
     transform: translate(-50%, -50%);
     animation: drifta 20s ease-in-out infinite alternate;
