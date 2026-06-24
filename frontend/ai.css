@@ -112,16 +112,33 @@ body {
 .main {
     flex: 1;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
+    flex-direction: row;
+    align-items: center;
+    gap: 3rem;
     padding: 0.25rem 0;
     min-height: 0;
 }
 
+.left-panel {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 0;
+}
+
+.right-panel {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 0;
+    height: 100%;
+}
+
 .badge {
     display: inline-block;
-    margin: 0 auto 1rem;
+    margin-bottom: 1rem;
     padding: 0.4rem 1.1rem;
     border: 1px solid rgba(255,255,255,0.06);
     border-radius: 100px;
@@ -132,10 +149,11 @@ body {
     letter-spacing: 0.08em;
     text-transform: uppercase;
     animation: rise 0.8s ease-out 0.2s both;
+    width: fit-content;
 }
 
 .title {
-    font-size: clamp(2.2rem, 6vw, 3.5rem);
+    font-size: clamp(2rem, 4vw, 3rem);
     font-weight: 900;
     letter-spacing: -0.03em;
     line-height: 1.1;
@@ -151,22 +169,21 @@ body {
 }
 
 .sub {
-    margin-top: 0.2rem;
+    margin-top: 0.5rem;
     margin-bottom: 0;
     color: rgba(255,255,255,0.35);
     font-size: 0.9rem;
     font-weight: 400;
-    max-width: 480px;
-    margin-left: auto;
-    margin-right: auto;
+    max-width: 420px;
     animation: rise 0.8s ease-out 0.5s both;
+    line-height: 1.5;
 }
 
 .input-row {
     display: flex;
     gap: 0.5rem;
-    max-width: 600px;
-    margin: 0.75rem auto 0.5rem;
+    max-width: 520px;
+    margin-top: 1.5rem;
     animation: rise 0.8s ease-out 0.6s both;
 }
 
