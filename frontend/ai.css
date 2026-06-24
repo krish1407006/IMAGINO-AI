@@ -283,7 +283,8 @@ body {
 
 #generated-image {
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: contain;
     display: block;
     border-radius: 20px;
     opacity: 0;
