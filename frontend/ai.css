@@ -439,15 +439,29 @@ body {
     to { opacity: 1; transform: translateY(0); }
 }
 
+@media (max-width: 900px) {
+    .main { flex-direction: column; gap: 1.5rem; justify-content: flex-start; padding-top: 0.5rem; }
+    .left-panel { width: 100%; }
+    .right-panel { width: 100%; height: auto; }
+    #image-container { max-width: 100%; max-height: 45vh; aspect-ratio: 4 / 3; }
+    .app-container { max-width: 600px; padding: 0.75rem 1.25rem; }
+    .badge, .title, .sub, .input-row, #download-container, #error-box { margin-left: auto; margin-right: auto; text-align: center; }
+    .badge { width: fit-content; }
+    #download-container { justify-content: center; }
+    .title { font-size: 1.8rem; }
+    .sub { font-size: 0.85rem; }
+    .input-row { flex-direction: column; gap: 0.5rem; }
+    #generate-btn { justify-content: center; }
+}
+
 @media (max-width: 640px) {
     .app-container { padding: 0.5rem 0.75rem; }
-    .main { padding: 0.15rem 0; }
-    .input-row { flex-direction: column; gap: 0.4rem; }
-    #generate-btn { justify-content: center; }
+    .main { gap: 1rem; }
+    .input-row { gap: 0.4rem; }
     #download-container { flex-direction: column; align-items: center; }
     #download-btn, #reset-btn { width: 100%; justify-content: center; }
-    #image-container { max-height: 45vh; }
-    .title { font-size: 1.5rem; }
+    #image-container { max-height: 40vh; }
+    .title { font-size: 1.4rem; }
     .sub { font-size: 0.8rem; }
     #prompt-input { padding: 0.75rem 1rem; font-size: 0.85rem; }
     #generate-btn { padding: 0.75rem 1.25rem; }
