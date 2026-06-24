@@ -9,6 +9,14 @@ const downloadBtn = document.getElementById('download-btn');
 const downloadContainer = document.getElementById('download-container');
 const resetBtn = document.getElementById('reset-btn');
 
+generatedImage.addEventListener('error', function() {
+    showError('Failed to load the generated image.');
+    generatedImage.classList.add('hidden');
+    placeholder.classList.remove('hidden');
+    downloadContainer.classList.add('hidden');
+    showLoader(false);
+});
+
 const API_URL = location.hostname === '' || location.hostname === 'localhost' || location.hostname === '127.0.0.1'
     ? 'http://localhost:8080/api/v1/generate'
     : 'https://imagino-ai-1.onrender.com/api/v1/generate';
