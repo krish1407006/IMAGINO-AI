@@ -324,7 +324,7 @@ body {
     display: flex;
     justify-content: center;
     gap: 0.75rem;
-    margin-top: 1.25rem;
+    margin-top: 0.6rem;
     animation: rise 0.8s ease-out 0.8s both;
 }
 
