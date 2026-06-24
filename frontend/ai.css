@@ -141,6 +141,7 @@ body {
     line-height: 1.1;
     animation: rise 0.8s ease-out 0.35s both;
     color: #fff;
+    margin-bottom: 0;
 }
 
 .title .highlight {
