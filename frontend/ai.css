@@ -8,11 +8,11 @@ body {
     font-family: 'Inter', sans-serif;
     background: #111113;
     color: #e8e8e8;
-    min-height: 100vh;
+    height: 100vh;
+    overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow-x: hidden;
 }
 
 #particle-canvas {
