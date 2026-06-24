@@ -9,7 +9,7 @@ const downloadBtn = document.getElementById('download-btn');
 const downloadContainer = document.getElementById('download-container');
 const resetBtn = document.getElementById('reset-btn');
 
-const API_URL = location.hostname === 'localhost' || location.hostname === '127.0.0.1'
+const API_URL = location.hostname === '' || location.hostname === 'localhost' || location.hostname === '127.0.0.1'
     ? 'http://localhost:8080/api/v1/generate'
     : 'https://imagino-ai-1.onrender.com/api/v1/generate';
 
