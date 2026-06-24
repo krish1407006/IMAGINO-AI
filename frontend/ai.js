@@ -30,13 +30,22 @@ generateBtn.addEventListener('click', async () => {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ prompt })
         });
+        if (!response.ok) {
+            const text = await response.text().catch(() => '');
+            let msg = 'Something went wrong.';
+            try { const e = JSON.parse(text); msg = e.error || e.details || msg; } catch {}
+            showError(msg);
+            generatedImage.classList.add('hidden');
+            placeholder.classList.remove('hidden');
+            downloadContainer.classList.add('hidden');
+            return;
+        }
         const data = await response.json();
         if (data.photo) {
             generatedImage.src = data.photo;
             generatedImage.classList.remove('hidden');
             placeholder.classList.add('hidden');
             downloadContainer.classList.remove('hidden');
-            console.log('Image loaded, download button should be visible');
         } else {
             showError('Image data not found in API response.');
             generatedImage.classList.add('hidden');
@@ -44,7 +53,7 @@ generateBtn.addEventListener('click', async () => {
             downloadContainer.classList.add('hidden');
         }
     } catch (error) {
-        showError('Something went wrong.');
+        showError(`Request failed: ${error.message}`);
         console.error('Error:', error);
         generatedImage.classList.add('hidden');
         placeholder.classList.remove('hidden');
