@@ -418,34 +418,6 @@ body {
     animation: rise 0.8s ease-out 1s both;
 }
 
-.nav-links {
-    display: flex;
-    gap: 1.5rem;
-}
-
-.nav-link {
-    color: rgba(255,255,255,0.25);
-    text-decoration: none;
-    font-size: 0.85rem;
-    font-weight: 500;
-    transition: color 0.3s;
-    position: relative;
-}
-
-.nav-link::after {
-    content: '';
-    position: absolute;
-    bottom: -4px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: #e8e8e8;
-    transition: width 0.3s;
-}
-
-.nav-link:hover { color: #fff; }
-.nav-link:hover::after { width: 100%; }
-
 /* Overlay */
 .overlay {
     position: fixed;
