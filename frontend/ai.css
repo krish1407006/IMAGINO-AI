@@ -618,19 +618,22 @@ body {
 }
 
 @media (max-width: 640px) {
-    .app-container { padding: 1rem; }
-    .main { padding: 1rem 0; }
-    .input-row { flex-direction: column; }
+    .app-container { padding: 0.5rem 0.75rem; }
+    .main { padding: 0.15rem 0; }
+    .input-row { flex-direction: column; gap: 0.4rem; }
     #generate-btn { justify-content: center; }
     #download-container { flex-direction: column; align-items: center; }
     #download-btn, #reset-btn { width: 100%; justify-content: center; }
-    #image-container { aspect-ratio: 4 / 3; }
-    .title { font-size: 1.8rem; }
+    #image-container { max-height: 45vh; }
+    .title { font-size: 1.5rem; }
     .overlay-content { padding: 2rem 1.25rem; }
     .overlay-title { font-size: 1.5rem; }
     .features-grid { grid-template-columns: 1fr; }
     .gallery-grid { grid-template-columns: repeat(2, 1fr); }
     .nav-links { display: none; }
+    .sub { font-size: 0.8rem; }
+    #prompt-input { padding: 0.75rem 1rem; font-size: 0.85rem; }
+    #generate-btn { padding: 0.75rem 1.25rem; }
 }
 
 @media (max-width: 480px) {
