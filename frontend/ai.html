@@ -210,18 +210,6 @@
         const featuresClose = document.getElementById('features-close');
         const galleryClose = document.getElementById('gallery-close');
 
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                const text = link.textContent.trim().toLowerCase();
-                if (text === 'features') {
-                    featuresOverlay.classList.add('visible');
-                } else if (text === 'gallery') {
-                    galleryOverlay.classList.add('visible');
-                }
-            });
-        });
-
         function closeOverlay(overlay) {
             overlay.classList.remove('visible');
         }
