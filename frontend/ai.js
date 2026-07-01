@@ -48,18 +48,12 @@ generateBtn.addEventListener('click', async () => {
             downloadContainer.classList.add('hidden');
             return;
         }
-        const data = await response.json();
-        if (data.url) {
-            generatedImage.src = data.url;
-            generatedImage.classList.remove('hidden');
-            placeholder.classList.add('hidden');
-            downloadContainer.classList.remove('hidden');
-        } else {
-            showError('Image URL not found in API response.');
-            generatedImage.classList.add('hidden');
-            placeholder.classList.remove('hidden');
-            downloadContainer.classList.add('hidden');
-        }
+        const blob = await response.blob();
+        const imageUrl = URL.createObjectURL(blob);
+        generatedImage.src = imageUrl;
+        generatedImage.classList.remove('hidden');
+        placeholder.classList.add('hidden');
+        downloadContainer.classList.remove('hidden');
     } catch (error) {
         showError(`Request failed: ${error.message}`);
         console.error('Error:', error);
