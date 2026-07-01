@@ -19,7 +19,7 @@ generatedImage.addEventListener('error', function() {
 
 const API_URL = location.hostname === '' || location.hostname === 'localhost' || location.hostname === '127.0.0.1'
     ? 'http://localhost:8080/api/v1/generate'
-    : 'https://imagino-ai-1.onrender.com/api/v1/generate';
+    : '/api/v1/generate';
 
 generateBtn.addEventListener('click', async () => {
     const prompt = promptInput.value.trim();
@@ -49,13 +49,13 @@ generateBtn.addEventListener('click', async () => {
             return;
         }
         const data = await response.json();
-        if (data.photo) {
-            generatedImage.src = data.photo;
+        if (data.url) {
+            generatedImage.src = data.url;
             generatedImage.classList.remove('hidden');
             placeholder.classList.add('hidden');
             downloadContainer.classList.remove('hidden');
         } else {
-            showError('Image data not found in API response.');
+            showError('Image URL not found in API response.');
             generatedImage.classList.add('hidden');
             placeholder.classList.remove('hidden');
             downloadContainer.classList.add('hidden');
